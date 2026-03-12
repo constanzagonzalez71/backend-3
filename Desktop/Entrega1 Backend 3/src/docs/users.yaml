@@ -1,0 +1,47 @@
+paths:
+  /api/users:
+    get:
+      summary: Obtiene todos los usuarios
+      tags:
+        - Users
+      responses:
+        "200":
+          description: Lista de usuarios obtenida correctamente
+
+  /api/users/{uid}:
+    get:
+      summary: Obtiene un usuario por id
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: ID del usuario
+      responses:
+        "200":
+          description: Usuario encontrado
+        "404":
+          description: Usuario no encontrado
+
+  /api/users:
+    post:
+      summary: Crear un usuario
+      tags:
+        - Users
+      responses:
+        "201":
+          description: Usuario creado
+
+  /api/users/{uid}:
+    delete:
+      summary: Eliminar usuario
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+      responses:
+        "200":
+          description: Usuario eliminado
